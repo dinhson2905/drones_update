@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, Breadcrumb } from 'antd';
+import LocationMap from '../_components/_location/LocationMap'
 const { Content } = Layout;
 class Location extends Component {
     render() {
@@ -15,10 +16,10 @@ class Location extends Component {
                     style={{
                         padding: 24,
                         margin: 0,
-                        minHeight: 1000,
+                        minHeight: 700,
                     }}
                 >
-                    Location
+                    <LocationMap />
                 </Content>
             </div>
         );
