@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
-
-
-function preventDefault(event) {
-    event.preventDefault();
-}
-
-const useStyles = makeStyles({
-    depositContext: {
-        flex: 1,
-    },
-});
+import { AnimateKeyframes } from "react-simple-animate";
+import {Tooltip} from 'antd'
+import DroneInfor from './DroneInfor';
 
 const divStyle = {
     display: "inline-block",
@@ -21,7 +13,12 @@ const divStyle = {
 
 };
 
+
+
 class Drone extends Component {
+    _on_click = (e) =>{
+        this.props._on_drone_click(this.props.drone.id)
+    }
     render() {
         return (
             <div>
@@ -31,16 +28,12 @@ class Drone extends Component {
                     iterationCount="infinite"
                     duration={45}
                     delay={0}
-                    keyframes={props.drone.keyframes}
+                    keyframes={this.props.drone.keyframes}
                 >
-                    <HtmlTooltip
-                        title={
-                            <LocationInfor drone={props.drone} />
-                        }
-                        placement="right"
-                    >
-                        <div style={divStyle} onClick={on_click} />
-                    </HtmlTooltip>
+                    
+                    <Tooltip title={<DroneInfor drone = {this.props.drone} />} color={"white"} key={"white"}>
+                        <div style={divStyle} onClick={this._on_click} /> 
+                    </Tooltip>
                 </AnimateKeyframes>
             </div>
         );
