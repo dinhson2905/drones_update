@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card } from 'antd';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import { SendOutlined, ShopOutlined, SettingOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 const { Meta } = Card;
@@ -14,8 +14,8 @@ class DroneCard extends Component {
                 cover={<img alt="example text" src={this.props.drone.avatar}/>}
                 actions={[
                     <SettingOutlined key="setting" />,
-                    <EditOutlined key="edit" />,
-                    <EllipsisOutlined key="ellipsis" />,
+                    <SendOutlined key="fight"/>,
+                    <ShopOutlined key="bucket" />,
                 ]}
             >
                 <Meta
