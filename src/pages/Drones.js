@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Layout, Breadcrumb, Typography, List, Pagination, Input, Button, } from 'antd';
-
 import Axios from 'axios';
 import DroneCard from '../_components/DroneCard';
 import AddDrone from '../_components/_drones/AddDrone.js'
@@ -15,7 +14,6 @@ class Drones extends Component {
         searchText: '',
         minValue: 0,
         maxValue: 9,
-
     }
 
     componentDidMount() {
@@ -94,7 +92,6 @@ class Drones extends Component {
                     <br />
                     <br />
                     <div>{this.renderDrones()}</div>
-
                 </Content>
                 <AddDrone id = {this.state.drones.length+1} addDrone = {this.addDrone} />
             </div>
