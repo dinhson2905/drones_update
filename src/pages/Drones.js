@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Layout, Breadcrumb, Typography, List, Pagination, Input, Button, Modal } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
+import { Layout, Breadcrumb, Typography, List, Pagination, Input, Button, } from 'antd';
+
 import Axios from 'axios';
 import DroneCard from '../_components/DroneCard';
+import AddDrone from '../_components/_drones/AddDrone.js'
 
 const { Search } = Input;
 const { Content } = Layout;
@@ -14,7 +15,7 @@ class Drones extends Component {
         searchText: '',
         minValue: 0,
         maxValue: 9,
-        visible: false,
+
     }
 
     componentDidMount() {
@@ -35,6 +36,10 @@ class Drones extends Component {
 
     enterDroneName = (value) => {
         this.setState({ searchText: value });
+    }
+
+    addDrone = (newdrone) =>{
+        this.state.drones.push(newdrone)
     }
 
     renderDrones = () => {
@@ -61,27 +66,6 @@ class Drones extends Component {
             </div>
         ) 
     }
-
-    showModal = () => {
-        this.setState({
-          visible: true,
-        });
-    };
-    
-    handleOk = e => {
-        console.log(e);
-        this.setState({
-            visible: false,
-        });
-    };
-    
-    handleCancel = e => {
-        console.log(e);
-        this.setState({
-            visible: false,
-        });
-    };
-
     render() {
         return (
             <div>
@@ -110,26 +94,9 @@ class Drones extends Component {
                     <br />
                     <br />
                     <div>{this.renderDrones()}</div>
-                    <Button 
-                        type="primary" 
-                        shape="circle" 
-                        icon={<PlusOutlined />} 
-                        size="large" 
-                        className="fixedbutton"
-                        onClick={this.showModal}
-                    >
-                    </Button>
+
                 </Content>
-                <Modal
-                    title="Basic Modal"
-                    visible={this.state.visible}
-                    onOk={this.handleOk}
-                    onCancel={this.handleCancel}
-                    >
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
-                </Modal>
+                <AddDrone id = {this.state.drones.length+1} addDrone = {this.addDrone} />
             </div>
         );
     }

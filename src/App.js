@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import Location from "./pages/Location";
 import Drones from "./pages/Drones";
 import Members from "./pages/Members";
+import DroneDetail from './pages/DroneDetail'
 
 import './App.css';
 
@@ -71,6 +72,8 @@ class App extends Component {
                   </Route>
                   <Route exact path="/hi08/drones">
                     <Drones />
+                  </Route>
+                  <Route exact path="/hi08/drones/:droneID"  render={(props) => <DroneDetail {...props}/>}>
                   </Route>
                   <Route exact path="/hi08/members">
                     <Members />
