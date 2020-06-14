@@ -9,7 +9,7 @@ class DroneCard extends Component {
     render() {
         return (
             <Card
-                extra={<Link to="#">More</Link>}
+                extra={<Link to = {'./drones/'+ this.props.drone.id}  >More</Link>}
                 style={{ width: 300 }}
                 cover={<img alt="example text" src={this.props.drone.avatar}/>}
                 actions={[

@@ -4,7 +4,6 @@ import LocationMap from '../_components/_location/LocationMap';
 import Drone from '../_components/_location/Drone';
 import DroneInforDetail from '../_components/_location/DroneInforDetail';
 
-
 const { Content } = Layout;
 
 class Location extends Component {
