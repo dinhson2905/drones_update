@@ -7,7 +7,10 @@ import Dashboard from "./pages/Dashboard";
 import Location from "./pages/Location";
 import Drones from "./pages/Drones";
 import Members from "./pages/Members";
-import DroneDetail from './pages/DroneDetail'
+import DroneDetail from './pages/DroneDetail';
+import DroneMaintaining from './pages/DroneMaintaining';
+import DroneActive from './pages/DroneActive';
+import DroneBucket from './pages/DroneBucket';
 
 import './App.css';
 
@@ -52,9 +55,9 @@ class App extends Component {
                     <Menu.Item key="location" icon={<AntCloudOutlined />}><Link to="/hi08/location">Location</Link></Menu.Item>
                     <SubMenu key="drones" icon={<RocketOutlined />} title="Drones">
                       <Menu.Item key="drones-all"><Link to="/hi08/drones">All</Link></Menu.Item>
-                      <Menu.Item key="drones-fight">In the Fights</Menu.Item>
-                      <Menu.Item key="drones-bucket">In Bucket</Menu.Item>
-                      <Menu.Item key="drones-maintance">Maintaining</Menu.Item>
+                      <Menu.Item key="drones-fight"><Link to="/hi08/drones/active">In the Fights</Link></Menu.Item>
+                      <Menu.Item key="drones-bucket"><Link to="/hi08/drones/bucket">In the Bucket</Link></Menu.Item>
+                      <Menu.Item key="drones-maintance"><Link to="/hi08/drones/mantaining">Mantaining</Link></Menu.Item>
                     </SubMenu>
                     <SubMenu key="members" icon={<TeamOutlined />} title="Members">
                       <Menu.Item key="members-all"><Link to="/hi08/members">All</Link></Menu.Item>
@@ -72,6 +75,15 @@ class App extends Component {
                   </Route>
                   <Route exact path="/hi08/drones">
                     <Drones />
+                  </Route>
+                  <Route exact path="/hi08/drones/active">
+                    <DroneActive />
+                  </Route>
+                  <Route exact path="/hi08/drones/bucket">
+                    <DroneBucket />
+                  </Route>
+                  <Route exact path="/hi08/drones/mantaining">
+                    <DroneMaintaining />
                   </Route>
                   <Route exact path="/hi08/drones/:droneID"  render={(props) => <DroneDetail {...props}/>}>
                   </Route>

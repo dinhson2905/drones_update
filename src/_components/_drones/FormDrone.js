@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Form, Input, Button, Select, notification } from 'antd';
+import { Form, Input, Button, notification } from 'antd';
 import axios from 'axios'
-
-const { Option } = Select;
 
 const layout = {
     labelCol: { span: 8 },
