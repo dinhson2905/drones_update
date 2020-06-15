@@ -24,7 +24,8 @@ class FormDrone extends Component {
         flight_time: "",
         max_data_link_range: "",
         power_supply: "",
-        avatar: ""
+        avatar: "",
+        status: ""
     }
 
     handleChangeName = (e) => {
@@ -102,7 +103,8 @@ class FormDrone extends Component {
             power_supply: this.power_supply,
             payload_weight: this.payload_weight,
             avatar: this.state.avatar,
-            createdAt: "2/6/2020"
+            createdAt: "2/6/2020",
+            status: "2"
         };
 
         axios.post(`https://5ecdcfb77c528e00167cd7e5.mockapi.io/api/drones`, drone)

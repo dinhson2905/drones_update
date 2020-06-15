@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, Menu } from 'antd';
-import { TeamOutlined, RocketOutlined, DashboardOutlined, AntCloudOutlined } from '@ant-design/icons';
+import { TeamOutlined, RocketOutlined, DashboardOutlined, AntCloudOutlined, BarChartOutlined, WechatOutlined, SolutionOutlined } from '@ant-design/icons';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Dashboard from "./pages/Dashboard";
@@ -13,6 +13,7 @@ import DroneActive from './pages/DroneActive';
 import DroneBucket from './pages/DroneBucket';
 import MemberProfile from "./_components/_member/MemberProfile";
 import './App.css';
+import Data from './pages/Data';
 
 const { SubMenu } = Menu;
 const { Header, Sider, Footer } = Layout;
@@ -86,10 +87,9 @@ class App extends Component {
                   <Route exact path="/hi08/members">
                     <Members />
                   </Route>
-		  <Route exact path="/hi08/members/profile/:id">
+		              <Route exact path="/hi08/members/profile/:id">
                     <MemberProfile />
                   </Route>
-                                
                 </Layout>
               </Layout>
             </Route>

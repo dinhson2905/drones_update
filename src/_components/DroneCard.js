@@ -9,18 +9,17 @@ class DroneCard extends Component {
 
     render() {
         const status = this.props.drone.status;
-        console.log(status);
         var color = '';
         var statusName = '';
         if (status === '1') {
             color = 'green';
             statusName = 'Active'
-        } else if (status === '2') {
-            color = 'blue';
-            statusName = 'In the Bucket'
-        } else {
+        } else if (status === '3') {
             color = 'red';
             statusName = 'Maintaing';
+        } else {
+            color = 'blue';
+            statusName = 'In the Bucket';
         }
 
         return (
@@ -41,7 +40,6 @@ class DroneCard extends Component {
                     title={this.props.drone.name}
                     description="This is the description"
                 />
-
             </Card>
         );
     }
