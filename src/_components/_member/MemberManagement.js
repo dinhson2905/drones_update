@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { Layout, Breadcrumb, Table, Space, Typography, Input, Button} from 'antd';
+import React, { Component }from 'react';
+import { Layout, Breadcrumb, Table, Space, Typography, Input, Button,Modal} from 'antd';
 import axios from 'axios';
 import { SearchOutlined } from '@ant-design/icons';
 import Highlighter from 'react-highlight-words';
 import { Link } from "react-router-dom";
-
+import {Form,Select,DatePicker} from 'antd';
 
 const { Content } = Layout;
 const { Title } = Typography;
-class Members extends Component {
+class MemberManagement extends Component {
 
     state = {
         members: [],
@@ -18,8 +18,18 @@ class Members extends Component {
         },
         loading: false,
         searchText: '',
-        searchedColumn: ''
+        visible: false,
+        searchedColumn: '',
+        upload_id: '',
+        upload_createdAt: '',
+        upload_name: '',
+        upload_avatar: '',
+        upload_birthday: '',
+        upload_gender: '',
+        upload_chucvu: '',
+        upload_bophan: ''
     }
+
 
     componentDidMount() {
         axios.get(`https://5ecdcfb77c528e00167cd7e5.mockapi.io/api/members`)
@@ -50,6 +60,53 @@ class Members extends Component {
         clearFilters();
         this.setState({ searchText: ''});
     }
+    showModal = () => {
+        this.setState({
+        visible: true,
+    	   });
+  	};
+    handleChangeName = event => {
+        this.setState({ upload_name: event.target.value });
+    }
+    handleChangeGender = event => {
+        this.setState({ upload_gender: event.target.value });
+    }
+    handleChangeCompetence = event => {
+        this.setState({ upload_chucvu: event.target.value });
+    }
+    handleChangeWP = event => {
+        this.setState({ upload_bophan: event.target.value });
+    }
+    handleChangeBirthday = event => {
+        this.setState({ upload_birthday: event.target.value });
+    }
+
+  	handleOk = (e) => {
+        e.preventDefault();
+    	this.setState({ loading: true });
+    	setTimeout(() => {
+      	this.setState({ loading: false, visible: false });
+    	}, 3000);
+
+        const user = {
+          name: this.state.upload_name,
+          gender: this.state.upload_gender,
+          birthday: this.state.upload_birthday,
+          bophan: this.state.upload_bophan,
+          chucvu: this.state.upload_chucvu,
+        };
+
+        axios.post(`https://5ecdcfb77c528e00167cd7e5.mockapi.io/api/members`, { user })
+          .then(res => {
+            console.log(res);
+            console.log(res.data);
+          })
+  	};
+
+  	handleCancel = () => {
+    	this.setState({ visible: false });
+  	};
+
 
     getColumnSearchProps = dataIndex => ({
         filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
@@ -99,7 +156,7 @@ class Members extends Component {
     
 
     render() {
-        const { members, pagination, loading } = this.state;
+        const { members, pagination, loading, visible } = this.state;
         const columns = [
             {
                 title: 'Id',
@@ -140,15 +197,14 @@ class Members extends Component {
                     </Space>
                 )
             }
-        ];
-        
-        
+        ];  
         return (
             <div>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>Home</Breadcrumb.Item>
                     <Breadcrumb.Item>HI_08</Breadcrumb.Item>
                     <Breadcrumb.Item>Members</Breadcrumb.Item>
+                    <Breadcrumb.Item>Management</Breadcrumb.Item>
                 </Breadcrumb>
                 <Content
                     className="site-layout-background"
@@ -158,7 +214,53 @@ class Members extends Component {
                         minHeight: 1000,
                     }}
                 >
-                    <Title>Members List</Title>
+                    <Title>Members Management</Title>
+                    <Button type="primary" onClick={this.showModal}>
+          				Add a member
+        			</Button>
+			        <Modal
+                      destroyOnClose={true}
+			          visible={visible}
+			          title="Add a member"
+			          onOk={this.handleOk}
+			          onCancel={this.handleCancel}
+			          footer={[
+			            <Button key="back" onClick={this.handleCancel}>
+			              Return
+			            </Button>,
+			            <Button key="submit" type="primary" loading={loading} onClick={this.handleOk.bind(this)}>
+			              Submit
+			            </Button>,
+			          ]}
+			        >
+					<Form labelCol={{ span: 4, }} wrapperCol={{ span: 14, }} layout="horizontal" 
+									initialValues={{ size: 'small', }} 
+			        				size={'small'} id="add-user-form">
+			        <Form.Item name="user_name" label="Name" onChange={this.handleChangeName}>
+			          <Input />
+			        </Form.Item>
+			        <Form.Item label="Gender" onChange={this.handleChangeGender}>
+			          <Select>
+			            <Select.Option value="M">Male</Select.Option>
+			            <Select.Option value="F">Female</Select.Option>
+			          </Select>
+			        </Form.Item>
+			        <Form.Item label="Competence" onChange={this.handleChangeCompetence}>
+			          <Select>
+			            <Select.Option value="Commander">Commander</Select.Option>
+			            <Select.Option value="Worker">Worker</Select.Option>
+			          </Select>
+			        </Form.Item>
+			        <Form.Item label="Working Parts" onChange={this.handleChangeWP}>
+			          <Select>
+			            <Select.Option value="Network monitoring">Network monitoring</Select.Option>
+			          </Select>
+			        </Form.Item>
+			        <Form.Item label="Birthday" onChange={this.handleChangeBirthday}>
+			          <DatePicker />
+			        </Form.Item>
+			      </Form>
+			        </Modal>
                     <Table
                         columns={columns}
                         dataSource={members}
@@ -174,4 +276,5 @@ class Members extends Component {
     }
 }
 
-export default Members;
+
+export default MemberManagement;
