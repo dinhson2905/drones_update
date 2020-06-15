@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, Breadcrumb, PageHeader, Button, Descriptions, Row, Col, Typography, Card, Table, Space } from 'antd';
-import { TeamOutlined, RocketOutlined, AntCloudOutlined } from '@ant-design/icons';
+import { TeamOutlined, RocketOutlined, AntCloudOutlined, BarChartOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import map_image from '../_images/map.png';
 import DoughnutChart from '../_components/DoughnutChart';
@@ -111,6 +111,7 @@ class Dashboard extends Component {
                                 <Button key="3" icon={<AntCloudOutlined />}>Location</Button>,
                                 <Button key="2" icon={<RocketOutlined />}>Drones</Button>,
                                 <Button key="1" icon={<TeamOutlined />}>Members</Button>,
+                                <Button key="4" icon={<BarChartOutlined />}>Raw Data Analysis</Button>,
                             ]}
                         >
                             <Descriptions size="small" column={3}>

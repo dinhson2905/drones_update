@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, Menu } from 'antd';
-import { TeamOutlined, RocketOutlined, DashboardOutlined, AntCloudOutlined } from '@ant-design/icons';
+import { TeamOutlined, RocketOutlined, DashboardOutlined, AntCloudOutlined, BarChartOutlined, WechatOutlined, SolutionOutlined } from '@ant-design/icons';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Dashboard from "./pages/Dashboard";
@@ -14,6 +14,7 @@ import DroneBucket from './pages/DroneBucket';
 import MemberProfile from "./_components/_member/MemberProfile";
 import MemberManagement from "./_components/_member/MemberManagement";
 import './App.css';
+import Data from './pages/Data';
 
 const { SubMenu } = Menu;
 const { Header, Sider, Footer } = Layout;
@@ -65,6 +66,9 @@ class App extends Component {
                       <Menu.Item key="members-working">Networking</Menu.Item>
                       <Menu.Item key="members-management"><Link to="/hi08/members/management">Management</Link></Menu.Item>
                     </SubMenu>
+                    <Menu.Item key="data-analy" icon={<BarChartOutlined />}><Link to="/hi08/data-analy">Raw Data Analysis</Link></Menu.Item>
+                    <Menu.Item key="about-us" icon={<SolutionOutlined />}>About Us</Menu.Item>
+                    <Menu.Item key="help" icon={<WechatOutlined />}>Help</Menu.Item>
                   </Menu>
                 </Sider>
                 <Layout style={{ padding: '0 24px 24px' }}>
@@ -91,11 +95,14 @@ class App extends Component {
                   <Route exact path="/hi08/members">
                     <Members />
                   </Route>
-		  <Route exact path="/hi08/members/profile/:id">
+		              <Route exact path="/hi08/members/profile/:id">
                     <MemberProfile />
                   </Route>
                   <Route exact path="/hi08/members/management">
                     <MemberManagement />
+                  </Route>
+                  <Route exact path="/hi08/data-analy">
+                    <Data />
                   </Route>                  
                 </Layout>
               </Layout>
