@@ -107,8 +107,7 @@ class Data extends Component {
                                         <Descriptions.Item label="Created At">2020-06-09 18:00:00</Descriptions.Item>
                                         <Descriptions.Item label="Location">UAV 1, Hoa Binh Factory</Descriptions.Item>
                                         <Descriptions.Item label="File format">JPG</Descriptions.Item>
-                                        <Descriptions.Item label="Shape">1200x628x3</Descriptions.Item>
-                                        
+                                        <Descriptions.Item label="Shape">1200x628x3</Descriptions.Item>                                       
                                     </Descriptions>
                                 </Content>
                             </Content>
