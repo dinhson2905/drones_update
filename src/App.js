@@ -12,7 +12,6 @@ import DroneMaintaining from './pages/DroneMaintaining';
 import DroneActive from './pages/DroneActive';
 import DroneBucket from './pages/DroneBucket';
 import MemberProfile from "./_components/_member/MemberProfile";
-import MemberManagement from "./_components/_member/MemberManagement";
 import './App.css';
 import Data from './pages/Data';
 
@@ -61,14 +60,7 @@ class App extends Component {
                       <Menu.Item key="drones-bucket"><Link to="/hi08/drones/bucket">In the Bucket</Link></Menu.Item>
                       <Menu.Item key="drones-maintance"><Link to="/hi08/drones/mantaining">Mantaining</Link></Menu.Item>
                     </SubMenu>
-                    <SubMenu key="members" icon={<TeamOutlined />} title="Members">
-                      <Menu.Item key="members-all"><Link to="/hi08/members">All</Link></Menu.Item>
-                      <Menu.Item key="members-working">Networking</Menu.Item>
-                      <Menu.Item key="members-management"><Link to="/hi08/members/management">Management</Link></Menu.Item>
-                    </SubMenu>
-                    <Menu.Item key="data-analy" icon={<BarChartOutlined />}><Link to="/hi08/data-analy">Raw Data Analysis</Link></Menu.Item>
-                    <Menu.Item key="about-us" icon={<SolutionOutlined />}>About Us</Menu.Item>
-                    <Menu.Item key="help" icon={<WechatOutlined />}>Help</Menu.Item>
+                    <Menu.Item key="members" icon={<TeamOutlined />}><Link to="/hi08/members">Members</Link></Menu.Item>
                   </Menu>
                 </Sider>
                 <Layout style={{ padding: '0 24px 24px' }}>
@@ -98,12 +90,6 @@ class App extends Component {
 		              <Route exact path="/hi08/members/profile/:id">
                     <MemberProfile />
                   </Route>
-                  <Route exact path="/hi08/members/management">
-                    <MemberManagement />
-                  </Route>
-                  <Route exact path="/hi08/data-analy">
-                    <Data />
-                  </Route>                  
                 </Layout>
               </Layout>
             </Route>

@@ -1,14 +1,18 @@
-import React, { Component } from 'react';
-import { Layout, Breadcrumb, Table, Space, Typography, Input, Button} from 'antd';
+import React, { Component }from 'react';
+import { Layout, Breadcrumb, Table, Space, Typography, Input, Button, Popconfirm, message, notification} from 'antd';
 import axios from 'axios';
 import { SearchOutlined } from '@ant-design/icons';
 import Highlighter from 'react-highlight-words';
 import { Link } from "react-router-dom";
+import AddMember from '../_components/_member/AddMember.js'
 
 
 const { Content } = Layout;
 const { Title } = Typography;
-class Members extends Component {
+function confirm() {
+    message.info('Deleted.');
+}
+class MemberManagement extends Component {
 
     state = {
         members: [],
@@ -20,6 +24,7 @@ class Members extends Component {
         searchText: '',
         searchedColumn: ''
     }
+
 
     componentDidMount() {
         axios.get(`https://5ecdcfb77c528e00167cd7e5.mockapi.io/api/members`)
@@ -50,6 +55,33 @@ class Members extends Component {
         clearFilters();
         this.setState({ searchText: ''});
     }
+    addMember = (newmem) =>{
+        this.state.members.push(newmem)
+    }
+    handleSubmit = (value,event) => {
+        axios.delete(`https://5ecdcfb77c528e00167cd7e5.mockapi.io/api/members/${value}`)
+            .then(res => {
+                notification.open({
+                    type: 'success',
+                    message: 'Success',
+                    description: 'delete success!',
+                    duration: 2
+                });
+            })
+            .catch((err)=>{
+                // alert("failed")
+                notification.open({
+                    type: 'error',
+                    message: 'Delete failed',
+                    description: 'Please try again',
+                    duration: 2
+                });
+            })
+        setTimeout(function(){
+            window.location.reload(); // you can pass true to reload function to ignore the client cache and reload from the server
+        },3000);
+    }
+
 
     getColumnSearchProps = dataIndex => ({
         filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
@@ -96,10 +128,9 @@ class Members extends Component {
             />) : ( text ),
     });
 
-    
-
     render() {
-        const { members, pagination, loading } = this.state;
+
+        const { members, pagination, loading, visible } = this.state;
         const columns = [
             {
                 title: 'Id',
@@ -135,20 +166,24 @@ class Members extends Component {
                 key: 'action',
                 dataIndex: 'id',
                 render: text => (
-                    <Space size="middle">
+                <div>
+                    <Button type="primary">
                         <Link to={`/hi08/members/profile/${ text }`}>View</Link>
-                    </Space>
+                    </Button>
+                    <Popconfirm title={`Do you really want to delete this person?`} onConfirm={() => this.handleSubmit(text)} okText="Yes" cancelText="No">
+                        <Button type="primary" danger >Delete</Button>
+                    </Popconfirm>
+                </div>
                 )
             }
-        ];
-        
-        
+        ];  
         return (
             <div>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>Home</Breadcrumb.Item>
                     <Breadcrumb.Item>HI_08</Breadcrumb.Item>
                     <Breadcrumb.Item>Members</Breadcrumb.Item>
+                    <Breadcrumb.Item>Management</Breadcrumb.Item>
                 </Breadcrumb>
                 <Content
                     className="site-layout-background"
@@ -158,7 +193,7 @@ class Members extends Component {
                         minHeight: 1000,
                     }}
                 >
-                    <Title>Members List</Title>
+                    <Title>Members Management</Title>
                     <Table
                         columns={columns}
                         dataSource={members}
@@ -167,11 +202,13 @@ class Members extends Component {
                         onChange={this.handleTableChange}
                     />
                     
-                </Content>  
+                </Content>
+                <AddMember id = {this.state.members.length+1} addMember = {this.addMember} />  
             </div>
             
         );
     }
 }
 
-export default Members;
+
+export default MemberManagement;
