@@ -1,5 +1,5 @@
 import React, { Component }from 'react';
-import { Layout, Breadcrumb, Table, Space, Typography, Input, Button, Popconfirm, message, notification} from 'antd';
+import { Layout, Breadcrumb, Table, Space, Typography, Input, Button, Popconfirm, notification} from 'antd';
 import axios from 'axios';
 import { SearchOutlined } from '@ant-design/icons';
 import Highlighter from 'react-highlight-words';
@@ -9,9 +9,7 @@ import AddMember from '../_components/_member/AddMember.js'
 
 const { Content } = Layout;
 const { Title } = Typography;
-function confirm() {
-    message.info('Deleted.');
-}
+
 class MemberManagement extends Component {
 
     state = {
@@ -130,7 +128,7 @@ class MemberManagement extends Component {
 
     render() {
 
-        const { members, pagination, loading, visible } = this.state;
+        const { members, pagination, loading } = this.state;
         const columns = [
             {
                 title: 'Id',

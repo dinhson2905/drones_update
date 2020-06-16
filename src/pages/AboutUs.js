@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, Breadcrumb, PageHeader, Button, Descriptions, Row, Col, Typography, Card, Table, Space, Avatar } from 'antd';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import { Layout, Breadcrumb, Row, Col, Typography, Card, Avatar } from 'antd';
 const { Meta } = Card;
 const { Content } = Layout;
 const { Title } = Typography;

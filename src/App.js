@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Modal, Collapse } from 'antd';
 import { TeamOutlined, RocketOutlined, DashboardOutlined, AntCloudOutlined, BarChartOutlined, WechatOutlined, SolutionOutlined } from '@ant-design/icons';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
@@ -18,8 +18,40 @@ import Data from './pages/Data';
 
 const { SubMenu } = Menu;
 const { Header, Sider, Footer } = Layout;
+const { Panel } = Collapse;
+function callback(key) {
+  console.log(key);
+}
+
+const text = `
+  A dog is a type of domesticated animal.
+  Known for its loyalty and faithfulness,
+  it can be found as a welcome guest in many households across the world.
+`;
 
 class App extends Component {
+  state = { visible: false };
+
+  showModal = () => {
+      this.setState({
+          visible: true,
+      });
+  };
+
+  handleOk = e => {
+      console.log(e);
+      this.setState({
+          visible: false,
+      });
+  };
+
+  handleCancel = e => {
+      console.log(e);
+      this.setState({
+          visible: false,
+      });
+  };
+
   render() {
     return (
       <Router>
@@ -63,7 +95,7 @@ class App extends Component {
                     <Menu.Item key="members" icon={<TeamOutlined />}><Link to="/hi08/members">Members</Link></Menu.Item>
                     <Menu.Item key="data-analy" icon={<BarChartOutlined />}><Link to="/hi08/data-analy">Raw Data Analysis</Link></Menu.Item>
                     <Menu.Item key="about-us" icon={<SolutionOutlined />}><Link to="/hi08/aboutus">About us</Link></Menu.Item>
-                    <Menu.Item key="about-us" icon={<WechatOutlined />}>Help</Menu.Item>
+                    <Menu.Item key="help" icon={<WechatOutlined />} onClick={this.showModal}>Help</Menu.Item>
                   </Menu>
                 </Sider>
                 <Layout style={{ padding: '0 24px 24px' }}>
@@ -102,6 +134,45 @@ class App extends Component {
 
           <Footer style={{ textAlign: 'center' }}>©Design Team: HI_08</Footer>
         </Layout>
+        <div>
+          <Modal
+              title="Help"
+              visible={this.state.visible}
+              onOk={this.handleOk}
+              onCancel={this.handleCancel}
+          >
+              <Collapse onChange={callback}>
+                <Panel header="Location" key="1">
+                  <ul>
+                    <li><h4>View</h4>{text}</li>
+                    <li><h4>Hover to drone</h4>{text}</li>
+                    <li><h4>Click to drone</h4>{text}</li>
+                  </ul>
+                </Panel>
+                <Panel header="Drones" key="2">
+                  <ul>
+                    <li><h4>View all</h4>{text}</li>
+                    <li><h4>Search drone</h4>{text}</li>
+                    <li><h4>Add drone</h4>{text}</li>
+                  </ul>
+                </Panel>
+                <Panel header="Members" key="3">
+                  <ul>
+                    <li><h4>View all</h4>{text}</li>
+                    <li><h4>Search member</h4>{text}</li>
+                    <li><h4>Add member</h4>{text}</li>
+                  </ul>
+                </Panel>
+                <Panel header="Raw Data Analysis" key="4">
+                  <ul>
+                    <li><h4>Filter Data</h4>{text}</li>
+                    <li><h4>Process Data</h4>{text}</li>
+                    <li><h4>Delete Data</h4>{text}</li>
+                  </ul>
+                </Panel>
+              </Collapse>
+          </Modal>
+          </div>
       </Router>
 
     );
