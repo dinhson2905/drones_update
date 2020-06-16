@@ -18,13 +18,12 @@ class Location extends Component {
                 y: "228",
                 wind: 23,
                 battery: 40,
-                video_url: "https://www.youtube.com/embed/27FUo2f4l2w",
                 keyframes: [
-                    "transform: translate(180px, -200px)",
-                    "transform: translate(310px, -200px)",
-                    "transform: translate(310px, -300px)",
-                    "transform: translate(180px, -300px)",
-                    "transform: translate(180px, -200px)"
+                    "transform: translate(100px, -200px)",
+                    "transform: translate(100px, -400px)",
+                    "transform: translate(200px, -350px)",
+                    "transform: translate(300px, -500px)",
+                    
                 ],
             },
             {
@@ -36,12 +35,11 @@ class Location extends Component {
                 y: "168",
                 wind: 17,
                 battery: 70,
-                video_url: "https://www.youtube.com/embed/oxphaEyVlU4",
                 keyframes: [
                     "transform: translate(280px, -300px)",
-                    "transform: translate(410px, -100px)",
-                    "transform: translate(280px, -100px)",
-                    "transform: translate(280px, -300px)"
+                    "transform: translate(100px, -300px)",
+                    "transform: translate(100px, -400px)",
+                    "transform: translate(280px, -300px)",
                 ],
             },
             {
@@ -49,27 +47,40 @@ class Location extends Component {
                 name: "Drone 3",
                 fightID: "2",
                 mission: "Check UAV 3",
-                x: "17",
-                y: "168",
+                x: "20",
+                y: "178",
                 wind: 17,
                 battery: 70,
-                video_url: "https://www.youtube.com/embed/oxphaEyVlU4",
                 keyframes: [
-                    "transform: translate(140px, -150px)",
-                    "transform: translate(320px, -180px)",
-                    "transform: translate(230px, -90px)",
-                    "transform: translate(40px, -270px)"
+                    "transform: translate(700px, -500px)",
+                    "transform: translate(650px, -450px)",
+                    "transform: translate(600px, -300px)",
+                    "transform: translate(500px, -450px)",
+                ],
+            },
+            {
+                id: "4",
+                name: "Drone 4",
+                fightID: "2",
+                mission: "Check UAV 4",
+                x: "25",
+                y: "166",
+                wind: 17,
+                battery: 70,
+                keyframes: [
+                    "transform: translate(700px, -250px)",
+                    "transform: translate(550px, -250px)",
+                    "transform: translate(600px, -350px)",
+                    "transform: translate(700px, -250px)",
                 ],
             }
         ],
-        drone_show : -1
+        drone_show : 1
     }
 
     _on_drone_click = (value) =>{
         this.setState({drone_show: parseInt(value)})
     }
-
-
     
     _render_drone_info = ()=>{
         if(this.state.drone_show !== -1 ){
@@ -102,10 +113,8 @@ class Location extends Component {
                             subTitle=""
                         >
                             <Descriptions size="small" column={3}>
-                                <Descriptions.Item label="Total Drones is following">3</Descriptions.Item>
-                                <Descriptions.Item label="Total Fights">
-                                    2
-                                </Descriptions.Item>
+                                <Descriptions.Item label="Total Drones is following">4</Descriptions.Item>
+                                <Descriptions.Item label="Total Fights">2</Descriptions.Item>
                                 <Descriptions.Item label="Location time">2020-06-10</Descriptions.Item>
                                 <Descriptions.Item label="Region">Hòa Bình Factory, Hòa Bình, Việt Nam</Descriptions.Item>
                             </Descriptions>
@@ -137,17 +146,9 @@ class Location extends Component {
                         </Col>
                     </Row>
                     <div className="map_location">
-                        <Content
-                            style={{
-                                padding: 12,
-                                margin: 0,
-                                minHeight: 200,
-                            }}
-                        >
-                            {this.state.drone_list.map((drone) => {
-                                return <Drone drone={drone} _on_drone_click={this._on_drone_click} />
-                            })}
-                        </Content>
+                        {this.state.drone_list.map((drone) => {
+                            return <Drone drone={drone} _on_drone_click={this._on_drone_click} />
+                        })}
                     </div>
                 </Content>
             </div>

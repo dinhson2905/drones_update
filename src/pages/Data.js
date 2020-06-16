@@ -5,6 +5,8 @@ import u1 from './../_images/u1.jpg';
 import u2 from './../_images/u2.jpg';
 import u3 from './../_images/u3.png';
 import u4 from './../_images/u3.jpg';
+import u5 from './../_images/u5.jpg';
+import u6 from './../_images/u6.jpg';
 
 const { Content } = Layout;
 
@@ -76,6 +78,8 @@ class Data extends Component {
                                     <div><img alt="example" src={u2} /></div>
                                     <div><img alt="example" src={u3} /></div>
                                     <div><img alt="example" src={u4} /></div>
+                                    <div><img alt="example" src={u5} /></div>
+                                    <div><img alt="example" src={u6} /></div>
                                 </Carousel>
                                 <br />
                                 <br />
@@ -90,26 +94,18 @@ class Data extends Component {
                                 style={{
                                     padding: 12,
                                     margin: 0,
-                                    minHeight: 200,
+                                    minHeight: 100,
                                 }}
                             >
-                                <Content
-                                    style={{
-                                        padding: 24,
-                                        margin: 0,
-                                        minHeight: 100,
-                                    }}
-                                >
-                                    <Descriptions title="Image Info" bordered column={1}>
-                                        <Descriptions.Item label="Fight ID">113</Descriptions.Item>
-                                        <Descriptions.Item label="Drone">Drone 1</Descriptions.Item>
-                                        <Descriptions.Item label="Pilot">Tran Bao Hieu</Descriptions.Item>
-                                        <Descriptions.Item label="Created At">2020-06-09 18:00:00</Descriptions.Item>
-                                        <Descriptions.Item label="Location">UAV 1, Hoa Binh Factory</Descriptions.Item>
-                                        <Descriptions.Item label="File format">JPG</Descriptions.Item>
-                                        <Descriptions.Item label="Shape">1200x628x3</Descriptions.Item>                                       
-                                    </Descriptions>
-                                </Content>
+                                <Descriptions title="Image Info" bordered column={1}>
+                                    <Descriptions.Item label="Fight ID">113</Descriptions.Item>
+                                    <Descriptions.Item label="Drone">Drone 1</Descriptions.Item>
+                                    <Descriptions.Item label="Pilot">Tran Bao Hieu</Descriptions.Item>
+                                    <Descriptions.Item label="Created At">2020-06-09 18:00:00</Descriptions.Item>
+                                    <Descriptions.Item label="Location">UAV 1, Hoa Binh Factory</Descriptions.Item>
+                                    <Descriptions.Item label="File format">JPG</Descriptions.Item>
+                                    <Descriptions.Item label="Shape">1200x628x3</Descriptions.Item>                                       
+                                </Descriptions>
                             </Content>
                         </Col>
                     </Row>

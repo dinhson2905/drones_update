@@ -38,7 +38,7 @@ class DroneCard extends Component {
             >
                 <Meta
                     title={this.props.drone.name}
-                    description="This is the description"
+                    description={this.props.drone.engines}
                 />
             </Card>
         );
