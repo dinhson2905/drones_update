@@ -13,8 +13,6 @@ const divStyle = {
 
 };
 
-
-
 class Drone extends Component {
     _on_click = (e) =>{
         this.props._on_drone_click(this.props.drone.id)

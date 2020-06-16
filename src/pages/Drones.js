@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Layout, Breadcrumb, Typography, List, Pagination, Input } from 'antd';
+import { Layout, Breadcrumb, List, Pagination, Input, PageHeader, Descriptions } from 'antd';
 import Axios from 'axios';
 import DroneCard from '../_components/DroneCard';
 import AddDrone from '../_components/_drones/AddDrone.js'
 
 const { Search } = Input;
 const { Content } = Layout;
-const { Title } = Typography;
 
 class Drones extends Component {
     state = {
@@ -80,7 +79,25 @@ class Drones extends Component {
                         minHeight: 1000,
                     }}
                 >
-                    <Title style={{ textAlign: 'center' }}>Drones List</Title>
+                    <div className="site-page-header-ghost-wrapper">
+                        <PageHeader
+                            ghost={false}
+                            title="Drones List"
+                            subTitle=""
+                        >
+                            <Descriptions size="small" column={3}>
+                                <Descriptions.Item label="Total Drone">100</Descriptions.Item>
+                                <Descriptions.Item label="Location Time">2020-06-10</Descriptions.Item>
+                                <Descriptions.Item label="Remarks">
+                                    Đại Học Bách Khoa Hà Nội
+                                </Descriptions.Item>
+                                <Descriptions.Item label="Activate">20</Descriptions.Item>
+                                <Descriptions.Item label="In the bucket">50</Descriptions.Item>
+                                <Descriptions.Item label="Maintaining">30</Descriptions.Item>
+                                
+                            </Descriptions>
+                        </PageHeader>
+                    </div>
                     <br />
                     <br />
                     <Search

@@ -23,7 +23,7 @@ class DoughnutChart extends Component {
 				dataPoints: [
 					{ name: "In bucket", y: 50 },
 					{ name: "Maintaing", y: 30 },
-					{ name: "Fighting", y: 20 },
+					{ name: "Activate", y: 20 },
 				]
 			}]
 		}
