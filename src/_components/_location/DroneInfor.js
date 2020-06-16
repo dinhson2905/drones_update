@@ -6,6 +6,8 @@ class DroneInfor extends Component {
     render() {
         return (
             <Descriptions title="Drone Info" column={2}>
+                <Descriptions.Item label="Fight ID">{this.props.drone.fightID}</Descriptions.Item>
+                <Descriptions.Item label="Mission">{this.props.drone.mission}</Descriptions.Item>
                 <Descriptions.Item label="Wind">{this.props.drone.wind}km/h</Descriptions.Item>
                 <Descriptions.Item label="Battery">{this.props.drone.battery}%</Descriptions.Item>
                 <Descriptions.Item label="Postiion X">{this.props.drone.x}&deg;10'</Descriptions.Item>

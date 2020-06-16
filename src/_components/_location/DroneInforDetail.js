@@ -10,6 +10,8 @@ class DroneInforDetail extends Component {
                 <Title level={4}>{this.props.drone.name}</Title>
                 <iframe width="280" height="180" src={this.props.drone.video_url} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <Descriptions title="Drone Info" column={1}>
+                    <Descriptions.Item label="Fight ID">{this.props.drone.fightID}</Descriptions.Item>
+                    <Descriptions.Item label="Mission">{this.props.drone.mission}</Descriptions.Item>
                     <Descriptions.Item label="Wind">{this.props.drone.wind}km/h</Descriptions.Item>
                     <Descriptions.Item label="Battery">{this.props.drone.battery}%</Descriptions.Item>
                     <Descriptions.Item label="Postiion X">{this.props.drone.x}&deg;10'</Descriptions.Item>

@@ -31,7 +31,6 @@ class App extends Component {
                 <Menu.Item key="hi08-location"><Link to="/hi08/location">Location</Link></Menu.Item>
                 <Menu.Item key="hi08-drones"><Link to="/hi08/drones">Drones</Link></Menu.Item>
                 <Menu.Item key="hi08-members"><Link to="/hi08/members">Members</Link></Menu.Item>
-                <Menu.Item key="hi08-statistic">Statistic</Menu.Item>
               </SubMenu>
               <Menu.Item key="hi01">HI_01</Menu.Item>
               <Menu.Item key="hi02">HI_02</Menu.Item>
@@ -61,6 +60,9 @@ class App extends Component {
                       <Menu.Item key="drones-maintance"><Link to="/hi08/drones/mantaining">Mantaining</Link></Menu.Item>
                     </SubMenu>
                     <Menu.Item key="members" icon={<TeamOutlined />}><Link to="/hi08/members">Members</Link></Menu.Item>
+                    <Menu.Item key="data-analy" icon={<BarChartOutlined />}><Link to="/hi08/data-analy">Raw Data Analysis</Link></Menu.Item>
+                    <Menu.Item key="about-us" icon={<SolutionOutlined />}>About Us</Menu.Item>
+                    <Menu.Item key="about-us" icon={<WechatOutlined />}>Help</Menu.Item>
                   </Menu>
                 </Sider>
                 <Layout style={{ padding: '0 24px 24px' }}>
@@ -90,6 +92,7 @@ class App extends Component {
 		              <Route exact path="/hi08/members/profile/:id">
                     <MemberProfile />
                   </Route>
+                  <Route exact path="/hi08/data-analy" component={Data}/>
                 </Layout>
               </Layout>
             </Route>
