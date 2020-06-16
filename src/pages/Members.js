@@ -166,7 +166,7 @@ class MemberManagement extends Component {
                 render: text => (
                 <div>
                     <Button type="primary">
-                        <Link to={`/hi08/members/profile/${ text }`}>View</Link>
+                        <Link to={`/drone-management/members/profile/${ text }`}>View</Link>
                     </Button>
                     <Popconfirm title={`Do you really want to delete this person?`} onConfirm={() => this.handleSubmit(text)} okText="Yes" cancelText="No">
                         <Button type="primary" danger >Delete</Button>
@@ -179,8 +179,8 @@ class MemberManagement extends Component {
             <div>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>Home</Breadcrumb.Item>
-                    <Breadcrumb.Item>HI_08</Breadcrumb.Item>
-                    <Breadcrumb.Item>Members</Breadcrumb.Item>
+                    <Breadcrumb.Item>Drone Management</Breadcrumb.Item>
+                    <Breadcrumb.Item>Crew Members</Breadcrumb.Item>
                     <Breadcrumb.Item>Management</Breadcrumb.Item>
                 </Breadcrumb>
                 <Content

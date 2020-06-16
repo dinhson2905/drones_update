@@ -59,74 +59,94 @@ class App extends Component {
           <Header className="header">
             <div className="logo"><h1><Link to="/" style={{ color: 'white' }}>HEDSPI</Link></h1></div>
             <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['hi08']}>
-              <SubMenu key="hi08" title="HI_08">
-                <Menu.Item key="hi08-dashboard"><Link to="/hi08">Dashboard</Link></Menu.Item>
-                <Menu.Item key="hi08-location"><Link to="/hi08/location">Location</Link></Menu.Item>
-                <Menu.Item key="hi08-drones"><Link to="/hi08/drones">Drones</Link></Menu.Item>
-                <Menu.Item key="hi08-members"><Link to="/hi08/members">Members</Link></Menu.Item>
+              <SubMenu key='drone-control'title="Drone Control">
+                <Menu.Item key='payload-control'><Link to="">Payload Control</Link></Menu.Item>
+                <Menu.Item key='autoflight-setup'><Link to="">Auto-flight Setup</Link></Menu.Item>
               </SubMenu>
-              <Menu.Item key="hi01">HI_01</Menu.Item>
-              <Menu.Item key="hi02">HI_02</Menu.Item>
-              <Menu.Item key="hi03">HI_03</Menu.Item>
-              <Menu.Item key="hi04">HI_04</Menu.Item>
-              <Menu.Item key="hi05">HI_05</Menu.Item>
-              <Menu.Item key="hi06">HI_06</Menu.Item>
-              <Menu.Item key="hi07">HI_07</Menu.Item>
-              <Menu.Item key="hi09">HI_09</Menu.Item>
-              <Menu.Item key="hi10">HI_10</Menu.Item>
+              <SubMenu key="drone-management" title="Drone Management">
+                <Menu.Item ><Link to="/drone-management">Dashboard</Link></Menu.Item>
+                <Menu.Item ><Link to="">Flight Data</Link></Menu.Item>
+                <Menu.Item ><Link to="">Flight Itinerary</Link></Menu.Item>
+                <Menu.Item ><Link to="">Risk Warning</Link></Menu.Item>
+                <Menu.Item ><Link to="/drone-management/drones">Drones</Link></Menu.Item>
+                <Menu.Item ><Link to="/drone-management/members">Crew Members</Link></Menu.Item>
+                <Menu.Item ><Link to="/drone-management/location">Location</Link></Menu.Item>
+                <Menu.Item ><Link to="/drone-management/data-analy">Raw Data Analysis</Link></Menu.Item>
+              </SubMenu>
+              <SubMenu title="Risk Analysis">
+                <Menu.Item ><Link to="">Electricity Grid Components List</Link></Menu.Item>
+                <Menu.Item ><Link to="">Potential Risks List</Link></Menu.Item>
+                <Menu.Item ><Link to="">Report And Examination Request</Link></Menu.Item>
+                <Menu.Item ><Link to="">Incident Analysis Management</Link></Menu.Item>
+              </SubMenu> 
+              <SubMenu title="Central Monitoring">
+                <Menu.Item ><Link to="https://hi02-qlgs-foradmin.web.app/alert">Electricity Grid Components Management</Link></Menu.Item>
+                <Menu.Item ><Link to="https://hi02-qlgs-foradmin.web.app/checklist">Report Receive</Link></Menu.Item>
+                <Menu.Item ><Link to="https://hi02-qlgs-foradmin.web.app/checklist">Examination List</Link></Menu.Item>
+                <Menu.Item ><Link to="https://hi02-qlgs-foradmin.web.app/addcheck">Examination Creation</Link></Menu.Item>
+              </SubMenu>
+              <SubMenu title="Examination Report">
+                <Menu.Item ><Link to="">Synthesis Report</Link></Menu.Item>
+                <Menu.Item ><Link to="">Examination Report Creation</Link></Menu.Item>
+              </SubMenu> 
+              <SubMenu title="Construction Supervision">
+                <Menu.Item ><Link to="https://hi01-efd.web.app/construction-list">Construction List</Link></Menu.Item>
+                <Menu.Item ><Link to="https://hi01-efd.web.app/construction-add">Construction Creation</Link></Menu.Item>
+                <Menu.Item ><Link to="https://hi01-efd.web.app/choose-report">Progress Report</Link></Menu.Item>
+              </SubMenu>
             </Menu>
           </Header>
           <Switch>
             <Route exact path="/">
               <HomePage />
             </Route>
-            <Route path="/hi08">
+            <Route path="/drone-management">
               <Layout>
                 <Sider width={200} className="site-layout-background">
                   <Menu mode="inline" defaultSelectedKeys={['dashboard']} defaultOpenKeys={['dashboard']} style={{ height: '100%', borderRight: 0 }}>
-                    <Menu.Item key="dashboard" icon={<DashboardOutlined />}><Link to="/hi08">Dashboard</Link></Menu.Item>
-                    <Menu.Item key="location" icon={<AntCloudOutlined />}><Link to="/hi08/location">Location</Link></Menu.Item>
+                    <Menu.Item key="dashboard" icon={<DashboardOutlined />}><Link to="/drone-management">Dashboard</Link></Menu.Item>
+                    <Menu.Item key="location" icon={<AntCloudOutlined />}><Link to="/drone-management/location">Location</Link></Menu.Item>
                     <SubMenu key="drones" icon={<RocketOutlined />} title="Drones">
-                      <Menu.Item key="drones-all"><Link to="/hi08/drones">All</Link></Menu.Item>
-                      <Menu.Item key="drones-fight"><Link to="/hi08/drones/active">In the Fights</Link></Menu.Item>
-                      <Menu.Item key="drones-bucket"><Link to="/hi08/drones/bucket">In the Bucket</Link></Menu.Item>
-                      <Menu.Item key="drones-maintance"><Link to="/hi08/drones/mantaining">Mantaining</Link></Menu.Item>
+                      <Menu.Item key="drones-all"><Link to="/drone-management/drones">All</Link></Menu.Item>
+                      <Menu.Item key="drones-fight"><Link to="/drone-management/drones/active">In the Fights</Link></Menu.Item>
+                      <Menu.Item key="drones-bucket"><Link to="/drone-management/drones/bucket">In the Bucket</Link></Menu.Item>
+                      <Menu.Item key="drones-maintance"><Link to="/drone-management/mantaining">Mantaining</Link></Menu.Item>
                     </SubMenu>
-                    <Menu.Item key="members" icon={<TeamOutlined />}><Link to="/hi08/members">Members</Link></Menu.Item>
-                    <Menu.Item key="data-analy" icon={<BarChartOutlined />}><Link to="/hi08/data-analy">Raw Data Analysis</Link></Menu.Item>
-                    <Menu.Item key="about-us" icon={<SolutionOutlined />}><Link to="/hi08/aboutus">About us</Link></Menu.Item>
+                    <Menu.Item key="members" icon={<TeamOutlined />}><Link to="/drone-management/members">Members</Link></Menu.Item>
+                    <Menu.Item key="data-analy" icon={<BarChartOutlined />}><Link to="/drone-management/data-analy">Raw Data Analysis</Link></Menu.Item>
+                    <Menu.Item key="about-us" icon={<SolutionOutlined />}><Link to="/drone-management/aboutus">About us</Link></Menu.Item>
                     <Menu.Item key="help" icon={<WechatOutlined />} onClick={this.showModal}>Help</Menu.Item>
                   </Menu>
                 </Sider>
                 <Layout style={{ padding: '0 24px 24px' }}>
-                  <Route exact path="/hi08">
+                  <Route exact path="/drone-management">
                     <Dashboard />
                   </Route>
-                  <Route exact path="/hi08/location">
+                  <Route exact path="/drone-management/location">
                     <Location />
                   </Route>
-                  <Route exact path="/hi08/drones">
+                  <Route exact path="/drone-management/drones">
                     <Drones />
                   </Route>
-                  <Route exact path="/hi08/drones/active">
+                  <Route exact path="/drone-management/drones/active">
                     <DroneActive />
                   </Route>
-                  <Route exact path="/hi08/drones/bucket">
+                  <Route exact path="/drone-management/drones/bucket">
                     <DroneBucket />
                   </Route>
-                  <Route exact path="/hi08/drones/mantaining">
+                  <Route exact path="/drone-management/drones/mantaining">
                     <DroneMaintaining />
                   </Route>
-                  <Route exact path="/hi08/drones/:droneID"  render={(props) => <DroneDetail {...props}/>}>
+                  <Route exact path="/drone-management/drones/:droneID"  render={(props) => <DroneDetail {...props}/>}>
                   </Route>
-                  <Route exact path="/hi08/members">
+                  <Route exact path="/drone-management/members">
                     <Members />
                   </Route>
-		              <Route exact path="/hi08/members/profile/:id">
+		                <Route exact path="/drone-management/members/profile/:id">
                     <MemberProfile />
                   </Route>
-                  <Route exact path="/hi08/data-analy" component={Data}/>
-                  <Route exact path="/hi08/aboutus" component={AboutUs}/>
+                  <Route exact path="/drone-management/data-analy" component={Data}/>
+                  <Route exact path="/drone-management/aboutus" component={AboutUs}/>
                 </Layout>
               </Layout>
             </Route>

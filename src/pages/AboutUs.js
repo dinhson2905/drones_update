@@ -10,7 +10,6 @@ class AboutUs extends Component {
             <div>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>Home</Breadcrumb.Item>
-                    <Breadcrumb.Item>HI_08</Breadcrumb.Item>
                     <Breadcrumb.Item>About us</Breadcrumb.Item>
                 </Breadcrumb>
                 <Content
