@@ -12,6 +12,7 @@ import DroneMaintaining from './pages/DroneMaintaining';
 import DroneActive from './pages/DroneActive';
 import DroneBucket from './pages/DroneBucket';
 import MemberProfile from "./_components/_member/MemberProfile";
+import AboutUs from './pages/AboutUs'
 import './App.css';
 import Data from './pages/Data';
 
@@ -61,7 +62,7 @@ class App extends Component {
                     </SubMenu>
                     <Menu.Item key="members" icon={<TeamOutlined />}><Link to="/hi08/members">Members</Link></Menu.Item>
                     <Menu.Item key="data-analy" icon={<BarChartOutlined />}><Link to="/hi08/data-analy">Raw Data Analysis</Link></Menu.Item>
-                    <Menu.Item key="about-us" icon={<SolutionOutlined />}>About Us</Menu.Item>
+                    <Menu.Item key="about-us" icon={<SolutionOutlined />}><Link to="/hi08/aboutus">About us</Link></Menu.Item>
                     <Menu.Item key="about-us" icon={<WechatOutlined />}>Help</Menu.Item>
                   </Menu>
                 </Sider>
@@ -93,6 +94,7 @@ class App extends Component {
                     <MemberProfile />
                   </Route>
                   <Route exact path="/hi08/data-analy" component={Data}/>
+                  <Route exact path="/hi08/aboutus" component={AboutUs}/>
                 </Layout>
               </Layout>
             </Route>
