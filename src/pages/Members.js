@@ -1,5 +1,5 @@
 import React, { Component }from 'react';
-import { Layout, Breadcrumb, Table, Space, Typography, Input, Button, Popconfirm, message, notification} from 'antd';
+import { Layout, Breadcrumb, Table, Space, Typography, Input, Button, Popconfirm, notification} from 'antd';
 import axios from 'axios';
 import { SearchOutlined } from '@ant-design/icons';
 import Highlighter from 'react-highlight-words';
@@ -9,9 +9,7 @@ import AddMember from '../_components/_member/AddMember.js'
 
 const { Content } = Layout;
 const { Title } = Typography;
-function confirm() {
-    message.info('Deleted.');
-}
+
 class MemberManagement extends Component {
 
     state = {
@@ -130,7 +128,7 @@ class MemberManagement extends Component {
 
     render() {
 
-        const { members, pagination, loading, visible } = this.state;
+        const { members, pagination, loading } = this.state;
         const columns = [
             {
                 title: 'Id',
@@ -168,7 +166,7 @@ class MemberManagement extends Component {
                 render: text => (
                 <div>
                     <Button type="primary">
-                        <Link to={`/hi08/members/profile/${ text }`}>View</Link>
+                        <Link to={`/drone-management/members/profile/${ text }`}>View</Link>
                     </Button>
                     <Popconfirm title={`Do you really want to delete this person?`} onConfirm={() => this.handleSubmit(text)} okText="Yes" cancelText="No">
                         <Button type="primary" danger >Delete</Button>
@@ -181,8 +179,8 @@ class MemberManagement extends Component {
             <div>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>Home</Breadcrumb.Item>
-                    <Breadcrumb.Item>HI_08</Breadcrumb.Item>
-                    <Breadcrumb.Item>Members</Breadcrumb.Item>
+                    <Breadcrumb.Item>Drone Management</Breadcrumb.Item>
+                    <Breadcrumb.Item>Crew Members</Breadcrumb.Item>
                     <Breadcrumb.Item>Management</Breadcrumb.Item>
                 </Breadcrumb>
                 <Content

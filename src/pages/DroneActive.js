@@ -63,7 +63,7 @@ class DroneActive extends Component {
             <div>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>Home</Breadcrumb.Item>
-                    <Breadcrumb.Item>HI_08</Breadcrumb.Item>
+                    <Breadcrumb.Item>Drone Management</Breadcrumb.Item>
                     <Breadcrumb.Item>Drones</Breadcrumb.Item>
                     <Breadcrumb.Item>Active</Breadcrumb.Item>
                 </Breadcrumb>

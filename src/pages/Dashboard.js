@@ -91,7 +91,7 @@ class Dashboard extends Component {
             <div>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>Home</Breadcrumb.Item>
-                    <Breadcrumb.Item>HI_08</Breadcrumb.Item>
+                    <Breadcrumb.Item>Drone Management</Breadcrumb.Item>
                     <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
                 </Breadcrumb>
                 <Content
@@ -116,7 +116,7 @@ class Dashboard extends Component {
                             <Descriptions size="small" column={3}>
                                 <Descriptions.Item label="Teams">Sơn, Hiếu, Hiếu, Diệp</Descriptions.Item>
                                 <Descriptions.Item label="Association">
-                                    <Link>HI_08</Link>
+                                    <Link>Drone Management</Link>
                                 </Descriptions.Item>
                                 <Descriptions.Item label="Creation Time">2020-06-10</Descriptions.Item>
                                 <Descriptions.Item label="Effective Time">2020-06-10</Descriptions.Item>
@@ -137,7 +137,7 @@ class Dashboard extends Component {
                             >
                                 <Card
                                 title={<Title level={2}>Location</Title>} 
-                                extra={<Link to="/hi08/location">View</Link>}
+                                extra={<Link to="/drone-management/location">View</Link>}
                                 cover={
                                     <img
                                       alt="example"
@@ -159,7 +159,7 @@ class Dashboard extends Component {
                             >
                                 <Card
                                 title={<Title level={2}>Drones</Title>} 
-                                extra={<Link to="/hi08/drones">View</Link>}
+                                extra={<Link to="/drone-management/drones">View</Link>}
                                 cover={
                                     <DoughnutChart />
                                   }
@@ -179,7 +179,7 @@ class Dashboard extends Component {
                             >
                                 <Card
                                 title={<Title level={2}>Members</Title>} 
-                                extra={<Link to="/hi08/members">More</Link>}
+                                extra={<Link to="/drone-management/members">More</Link>}
                                 cover={
                                     <Table
                                         columns={columns}
