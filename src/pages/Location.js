@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, Breadcrumb, Row, Col, Descriptions, PageHeader } from 'antd';
+import { Layout, Breadcrumb, Row, Col, Descriptions, PageHeader, Card } from 'antd';
 import LocationMap from '../_components/_location/LocationMap';
 import Drone from '../_components/_location/Drone';
 import DroneInforDetail from '../_components/_location/DroneInforDetail';
@@ -68,10 +68,10 @@ class Location extends Component {
                 wind: 17,
                 battery: 70,
                 keyframes: [
-                    "transform: translate(700px, -250px)",
-                    "transform: translate(550px, -250px)",
-                    "transform: translate(600px, -350px)",
-                    "transform: translate(700px, -250px)",
+                    "transform: translate(700px, -350px)",
+                    "transform: translate(550px, -300px)",
+                    "transform: translate(600px, -400px)",
+                    "transform: translate(700px, -300px)",
                 ],
             }
         ],
@@ -126,10 +126,9 @@ class Location extends Component {
                                 style={{
                                     padding: 12,
                                     margin: 0,
-                                    minHeight: 200,
                                 }}
                             >
-                                <LocationMap />
+                                <Card cover={<LocationMap />} />
                             </Content>
                             
                         </Col>
@@ -138,7 +137,6 @@ class Location extends Component {
                                 style={{
                                     padding: 12,
                                     margin: 0,
-                                    minHeight: 200,
                                 }}
                             >
                                 {this._render_drone_info()} 
