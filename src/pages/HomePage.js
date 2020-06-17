@@ -1,10 +1,47 @@
 import React, { Component } from 'react';
+import { PageHeader, Layout, Descriptions, Carousel } from 'antd';
+import bg1 from './../_images/bg1.jpg';
+import bg2 from './../_images/bg2.jpg';
+import bg3 from './../_images/bg3.jpg';
+import bg4 from './../_images/bg4.jpg';
+import bg5 from './../_images/bg5.jpg';
+
+
+const { Content } = Layout;
 
 class HomePage extends Component {
     render() {
         return (
             <div>
-                Home page
+                <Content
+                    className="site-layout-background"
+                    style={{
+                        padding: 24,
+                        margin: 0,
+                        minHeight: 500,
+                    }}
+                >   
+                    <div className="site-page-header-ghost-wrapper">
+                        <PageHeader
+                            ghost={false}
+                            title="Monitoring the electricity transmission network"
+                            subTitle=""
+                        >
+                            <Descriptions size="small" column={3}>
+                                <Descriptions.Item label="Teams">Hedspi AS K61</Descriptions.Item>
+                                <Descriptions.Item label="Location Time">2020-06-12</Descriptions.Item>
+                                <Descriptions.Item label="Remarks">Đại học Bách Khoa Hà Nội</Descriptions.Item>
+                            </Descriptions>
+                        </PageHeader>
+                    </div>
+                    <Carousel effect="fade">
+                        <img alt="example" src={bg1} />
+                        <img alt="example" src={bg2} />
+                        <img alt="example" src={bg3} />
+                        <img alt="example" src={bg4} />
+                        <img alt="example" src={bg5} />
+                    </Carousel>
+                </Content>   
             </div>
         );
     }

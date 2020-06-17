@@ -110,7 +110,7 @@ class App extends Component {
                       <Menu.Item key="drones-all"><Link to="/drone-management/drones">All</Link></Menu.Item>
                       <Menu.Item key="drones-fight"><Link to="/drone-management/drones/active">In the Fights</Link></Menu.Item>
                       <Menu.Item key="drones-bucket"><Link to="/drone-management/drones/bucket">In the Bucket</Link></Menu.Item>
-                      <Menu.Item key="drones-maintance"><Link to="/drone-management/mantaining">Mantaining</Link></Menu.Item>
+                      <Menu.Item key="drones-maintance"><Link to="/drone-management/drones/mantaining">Mantaining</Link></Menu.Item>
                     </SubMenu>
                     <Menu.Item key="members" icon={<TeamOutlined />}><Link to="/drone-management/members">Members</Link></Menu.Item>
                     <Menu.Item key="data-analy" icon={<BarChartOutlined />}><Link to="/drone-management/data-analy">Raw Data Analysis</Link></Menu.Item>
