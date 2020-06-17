@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { PageHeader, Layout, Descriptions, Carousel } from 'antd';
+import { PageHeader, Layout, Descriptions } from 'antd';
 import bg1 from './../_images/bg1.jpg';
-import bg2 from './../_images/bg2.jpg';
-import bg3 from './../_images/bg3.jpg';
-import bg4 from './../_images/bg4.jpg';
-import bg5 from './../_images/bg5.jpg';
 
 
 const { Content } = Layout;
@@ -34,13 +30,7 @@ class HomePage extends Component {
                             </Descriptions>
                         </PageHeader>
                     </div>
-                    <Carousel effect="fade">
-                        <img alt="example" src={bg1} />
-                        <img alt="example" src={bg2} />
-                        <img alt="example" src={bg3} />
-                        <img alt="example" src={bg4} />
-                        <img alt="example" src={bg5} />
-                    </Carousel>
+                    <img alt="example" src={bg1} style={{width: '100%'}} />
                 </Content>   
             </div>
         );
