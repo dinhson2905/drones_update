@@ -108,7 +108,7 @@ class App extends Component {
                     <Menu.Item key="location" icon={<AntCloudOutlined />}><Link to="/drone-management/location">Location</Link></Menu.Item>
                     <SubMenu key="drones" icon={<RocketOutlined />} title="Drones">
                       <Menu.Item key="drones-all"><Link to="/drone-management/drones">All</Link></Menu.Item>
-                      <Menu.Item key="drones-fight"><Link to="/drone-management/drones/active">In the Fights</Link></Menu.Item>
+                      <Menu.Item key="drones-fight"><Link to="/drone-management/drones/active">In Progress</Link></Menu.Item>
                       <Menu.Item key="drones-bucket"><Link to="/drone-management/drones/bucket">In the Bucket</Link></Menu.Item>
                       <Menu.Item key="drones-maintance"><Link to="/drone-management/drones/mantaining">Mantaining</Link></Menu.Item>
                     </SubMenu>

@@ -91,7 +91,7 @@ class Drones extends Component {
                                 <Descriptions.Item label="Remarks">
                                     Đại Học Bách Khoa Hà Nội
                                 </Descriptions.Item>
-                                <Descriptions.Item label="Activate">20</Descriptions.Item>
+                                <Descriptions.Item label="In progress">20</Descriptions.Item>
                                 <Descriptions.Item label="In the bucket">50</Descriptions.Item>
                                 <Descriptions.Item label="Maintaining">30</Descriptions.Item>
                                 
