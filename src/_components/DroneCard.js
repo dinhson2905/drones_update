@@ -13,7 +13,7 @@ class DroneCard extends Component {
         var statusName = '';
         if (status === '1') {
             color = 'green';
-            statusName = 'Active'
+            statusName = 'In progress'
         } else if (status === '3') {
             color = 'red';
             statusName = 'Maintaing';
