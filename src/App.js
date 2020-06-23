@@ -80,19 +80,19 @@ class App extends Component {
                 <Menu.Item ><Link to="">Incident Analysis Management</Link></Menu.Item>
               </SubMenu> 
               <SubMenu title="Central Monitoring">
-                <Menu.Item ><Link to="https://hi02-qlgs-foradmin.web.app/alert">Electricity Grid Components Management</Link></Menu.Item>
-                <Menu.Item ><Link to="https://hi02-qlgs-foradmin.web.app/checklist">Report Receive</Link></Menu.Item>
-                <Menu.Item ><Link to="https://hi02-qlgs-foradmin.web.app/checklist">Examination List</Link></Menu.Item>
-                <Menu.Item ><Link to="https://hi02-qlgs-foradmin.web.app/addcheck">Examination Creation</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://hi02-qlgs-foradmin.web.app/alert" }} target="_blank">Electricity Grid Components Management</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://hi02-qlgs-foradmin.web.app/checklist" }} target="_blank">Report Receive</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://hi02-qlgs-foradmin.web.app/checklist" }} target="_blank">Examination List</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://hi02-qlgs-foradmin.web.app/addcheck" }} target="_blank">Examination Creation</Link></Menu.Item>
               </SubMenu>
               <SubMenu title="Examination Report">
                 <Menu.Item ><Link to="">Synthesis Report</Link></Menu.Item>
                 <Menu.Item ><Link to="">Examination Report Creation</Link></Menu.Item>
               </SubMenu> 
               <SubMenu title="Construction Supervision">
-                <Menu.Item ><Link to="https://hi01-efd.web.app/construction-list">Construction List</Link></Menu.Item>
-                <Menu.Item ><Link to="https://hi01-efd.web.app/construction-add">Construction Creation</Link></Menu.Item>
-                <Menu.Item ><Link to="https://hi01-efd.web.app/choose-report">Progress Report</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://hi01-efd.web.app/construction-list" }} target="_blank">Construction List</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://hi01-efd.web.app/construction-add" }} target="_blank">Construction Creation</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://hi01-efd.web.app/choose-report"}} target="_blank">Progress Report</Link></Menu.Item>
               </SubMenu>
             </Menu>
           </Header>
