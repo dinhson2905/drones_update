@@ -60,34 +60,32 @@ class App extends Component {
             <div className="logo"><h1><Link to="/" style={{ color: 'white' }}>HEDSPI</Link></h1></div>
             <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['hi08']}>
               <SubMenu key='drone-control'title="Drone Control">
-                <Menu.Item key='payload-control'><Link to="">Payload Control</Link></Menu.Item>
-                <Menu.Item key='autoflight-setup'><Link to="">Auto-flight Setup</Link></Menu.Item>
+                <Menu.Item key='payload-control'><Link to={{ pathname: "https://www.figma.com/proto/vtNY9oE4CgxBhNfIQ83mGY/20192?node-id=1%3A2&scaling=scale-down&fbclid=IwAR04XzVkELHaijXAy4pnTq4qujofjgUFDD1GHNJa27N2mfs4iNuPwhRwPms" }} target="_blank">Payload Control</Link></Menu.Item>
+                <Menu.Item key='autoflight-setup'><Link to={{ pathname: "https://nguyenvd27.github.io/HI_template/admin/taotrinhbay.html" }} target="_blank">Auto-flight Setup</Link></Menu.Item>
               </SubMenu>
               <SubMenu key="drone-management" title="Drone Management">
                 <Menu.Item ><Link to="/drone-management">Dashboard</Link></Menu.Item>
-                <Menu.Item ><Link to="">Flight Data</Link></Menu.Item>
-                <Menu.Item ><Link to="">Flight Itinerary</Link></Menu.Item>
-                <Menu.Item ><Link to="">Risk Warning</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://drnguyen2525.github.io/hci-flight-management/flight-data" }} target="_blank">Flight Data</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://nguyenvd27.github.io/HI_template/admin/xemdanhsachtrinhbay.html" }} target="_blank">Flight Itinerary</Link></Menu.Item>
                 <Menu.Item ><Link to="/drone-management/drones">Drones</Link></Menu.Item>
                 <Menu.Item ><Link to="/drone-management/members">Crew Members</Link></Menu.Item>
                 <Menu.Item ><Link to="/drone-management/location">Location</Link></Menu.Item>
                 <Menu.Item ><Link to="/drone-management/data-analy">Raw Data Analysis</Link></Menu.Item>
               </SubMenu>
               <SubMenu title="Risk Analysis">
-                <Menu.Item ><Link to="">Electricity Grid Components List</Link></Menu.Item>
-                <Menu.Item ><Link to="">Potential Risks List</Link></Menu.Item>
-                <Menu.Item ><Link to="">Report And Examination Request</Link></Menu.Item>
-                <Menu.Item ><Link to="">Incident Analysis Management</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://nnhhai.github.io/" }} target="_blank">Electricity Grid Components List</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://nguyenvd27.github.io/HI_template/admin/xemcanhbao.html" }} target="_blank">Potential Risks List</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://risk-report-6c67e.web.app/?fbclid=IwAR0BRXIhp8y4MquO2D9umMrvyKNWvmI15ImLH1HlMsm9haLRdZRre4xEmWY#/analysis/detail" }} target="_blank">Report And Examination Request</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://risk-report-6c67e.web.app/?fbclid=IwAR0A-1eeqNlKEqyNGcVCkFi71jhf93d61uHXKzSCUwDfdLnoL9VFIhNtbf8#/analysis" }} target="_blank">Incident Analysis Management</Link></Menu.Item>
               </SubMenu> 
               <SubMenu title="Central Monitoring">
-                <Menu.Item ><Link to={{ pathname: "https://hi02-qlgs-foradmin.web.app/alert" }} target="_blank">Electricity Grid Components Management</Link></Menu.Item>
-                <Menu.Item ><Link to={{ pathname: "https://hi02-qlgs-foradmin.web.app/checklist" }} target="_blank">Report Receive</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://hi02-qlgs-foradmin.web.app/alert" }} target="_blank">Report Receive</Link></Menu.Item>
                 <Menu.Item ><Link to={{ pathname: "https://hi02-qlgs-foradmin.web.app/checklist" }} target="_blank">Examination List</Link></Menu.Item>
                 <Menu.Item ><Link to={{ pathname: "https://hi02-qlgs-foradmin.web.app/addcheck" }} target="_blank">Examination Creation</Link></Menu.Item>
               </SubMenu>
               <SubMenu title="Examination Report">
-                <Menu.Item ><Link to="">Synthesis Report</Link></Menu.Item>
-                <Menu.Item ><Link to="">Examination Report Creation</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://electric-report-a846b.web.app/datatable.html" }} target="_blank">Synthesis Report</Link></Menu.Item>
+                <Menu.Item ><Link to={{ pathname: "https://electric-report-a846b.web.app/forms.html" }} target="_blank">Examination Report Creation</Link></Menu.Item>
               </SubMenu> 
               <SubMenu title="Construction Supervision">
                 <Menu.Item ><Link to={{ pathname: "https://hi01-efd.web.app/construction-list" }} target="_blank">Construction List</Link></Menu.Item>

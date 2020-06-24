@@ -19,10 +19,9 @@ class Location extends Component {
                 wind: 23,
                 battery: 40,
                 keyframes: [
-                    "transform: translate(100px, -200px)",
-                    "transform: translate(100px, -400px)",
-                    "transform: translate(200px, -350px)",
-                    "transform: translate(300px, -500px)",
+                    "transform: translate(100px, -500px)",
+                    "transform: translate(200px, -500px)",
+                    "transform: translate(100px, -480px)",
                     
                 ],
             },
@@ -36,10 +35,9 @@ class Location extends Component {
                 wind: 17,
                 battery: 70,
                 keyframes: [
-                    "transform: translate(280px, -300px)",
-                    "transform: translate(100px, -300px)",
+                    "transform: translate(280px, -500px)",
+                    "transform: translate(100px, -460px)",
                     "transform: translate(100px, -400px)",
-                    "transform: translate(280px, -300px)",
                 ],
             },
             {
@@ -52,10 +50,9 @@ class Location extends Component {
                 wind: 17,
                 battery: 70,
                 keyframes: [
-                    "transform: translate(700px, -500px)",
-                    "transform: translate(650px, -450px)",
-                    "transform: translate(600px, -300px)",
-                    "transform: translate(500px, -450px)",
+                    "transform: translate(350px, -500px)",
+                    "transform: translate(300px, -450px)",
+                    "transform: translate(320px, -400px)",
                 ],
             },
             {
@@ -68,10 +65,9 @@ class Location extends Component {
                 wind: 17,
                 battery: 70,
                 keyframes: [
-                    "transform: translate(700px, -350px)",
-                    "transform: translate(550px, -300px)",
-                    "transform: translate(600px, -400px)",
-                    "transform: translate(700px, -300px)",
+                    "transform: translate(400px, -500px)",
+                    "transform: translate(370px, -500px)",
+                    "transform: translate(300px, -400px)",
                 ],
             }
         ],
